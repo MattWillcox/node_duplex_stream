@@ -39,7 +39,7 @@ const dataTransform = new Transform({
   readableObjectMode: true,
   transform(chunk, encoding, callback) {
     stats.totalLength += chunk.length;
-    let linesArray = chunk.toString().split('\n');
+    const linesArray = chunk.toString().split('\n');
     stats.totalLines += linesArray.length - 1;
     this.push(stats);
     callback();
